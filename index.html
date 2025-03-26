@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Virtual Casino</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Virtual Casino</h1>
+    <div class="balance">Balance: $<span id="money">1000</span></div>
+
+    <div class="game-selector">
+      <button onclick="switchGame('slots')">Slots</button>
+      <button onclick="switchGame('blackjack')">Blackjack</button>
+      <button onclick="switchGame('roulette')">Roulette</button>
+    </div>
+
+    <div id="slots" class="game">
+      <h2>Slots</h2>
+      <div class="slot-machine">
+        <div class="slot">🎰</div>
+        <div class="slot">🎰</div>
+        <div class="slot">🎰</div>
+      </div>
+      <div class="controls">
+        <input type="number" id="slots-bet" value="10" min="1" max="100">
+        <button onclick="playSlots()">SPIN!</button>
+      </div>
+    </div>
+
+    <div id="blackjack" class="game hidden">
+      <h2>Blackjack</h2>
+      <div id="dealer-hand">Dealer's Hand: <span></span></div>
+      <div id="player-hand">Your Hand: <span></span></div>
+      <div class="controls">
+        <input type="number" id="blackjack-bet" value="10" min="1" max="100">
+        <button onclick="startBlackjack()">Deal</button>
+        <button onclick="hit()" class="game-button">Hit</button>
+        <button onclick="stand()" class="game-button">Stand</button>
+      </div>
+    </div>
+
+    <div id="roulette" class="game hidden">
+      <h2>Roulette</h2>
+      <div class="roulette-wheel">🎲</div>
+      <div class="bet-options">
+        <button onclick="placeBet('red')">Red</button>
+        <button onclick="placeBet('black')">Black</button>
+        <button onclick="placeBet('green')">Green</button>
+      </div>
+      <div class="controls">
+        <input type="number" id="roulette-bet" value="10" min="1" max="100">
+        <button onclick="spinRoulette()">Spin</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
